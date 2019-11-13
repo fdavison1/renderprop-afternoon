@@ -2,7 +2,7 @@ import React from 'react'
 import Display from './Display'
 import App from '../App'
 
-const withCurrency = (BaseComponent) => (
+const withCurrency = () => (
 class Currency extends React.Component{
     state = {
         currencyChosen: false, 
@@ -45,13 +45,19 @@ class Currency extends React.Component{
         ))
         return(
             <div>
-            <select value={this.state.selectedCurrency}>
+            <select 
+            value={this.state.selectedCurrency}
+            onChange={this.handleOptionSelect}>
                 <option value='Select Currency'>Select Currency</option>
                 {currencyOptions}
             </select>
             <div>
-                <button className='add'>+</button>
-                <button className='minus'>-</button>
+                <button 
+                onClick={()=> this.handleAmountIncrease}
+                className='add'>+</button>
+                <button 
+                onClick={()=> this.handleAmountDecrease}
+                className='minus'>-</button>
             </div>
 
             {this.state.currencyChosen ? 
@@ -64,8 +70,6 @@ class Currency extends React.Component{
                     
                     : <p>Please Select Currency</p>
                         
-                        
-
                 }
             
         </div>
