@@ -10,6 +10,7 @@ class Currency extends React.Component{
         amount: 0
     }
     handleAmountIncrease = () => {
+        console.log('fred')
         this.setState((prevState) => {
             return {
                 amount: (prevState.amount += 1)
@@ -53,10 +54,10 @@ class Currency extends React.Component{
             </select>
             <div>
                 <button 
-                onClick={()=> this.handleAmountIncrease}
+                onClick={()=> this.handleAmountIncrease()}
                 className='add'>+</button>
                 <button 
-                onClick={()=> this.handleAmountDecrease}
+                onClick={()=> this.handleAmountDecrease()}
                 className='minus'>-</button>
             </div>
 
