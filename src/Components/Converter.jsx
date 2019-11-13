@@ -1,6 +1,8 @@
 import React from 'react'
+// import CurrencyDisplay from './Display'
+import App from '../App'
 
-export default class Currency extends React.Component{
+class Converter extends React.Component{
     state = {
         currencyChosen: false, 
         selectedCurrency: 'Select Currency', 
@@ -50,11 +52,31 @@ export default class Currency extends React.Component{
                 <button className='add'>+</button>
                 <button className='minus'>-</button>
             </div>
-            {this.props.render(
-                currencyData[this.state.selectedCurrency],
-                this.state.amount
+
+            {this.state.currencyChosen ? 
+            
+            
+                 this.props.render(
+                    currencyData[this.state.selectedCurrency],
+                    this.state.amount
+                    ) 
+                    
+                    : <p>Please Select Currency</p>
+                        
+                        
+
+                }
             )}
+
+           
+
+
+
         </div>
         )
     }
 }
+
+// const ExchangedCurrency = withConverter(App)
+
+export default withConverter(App)
