@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import Currency from './Components/Converter'
 
 class App extends Component {
   render() {
     return (
-      <div>
-
-      </div>
+      <>
+          <Currency render={()=> {}} />
+      </>
     );
   }
 }
