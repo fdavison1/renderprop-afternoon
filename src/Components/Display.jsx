@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CurrencyDisplay = (props) => (
+const Display = (props) => (
 	<p>
 		US Dollar ${props.amount.toFixed(2)} - {props.currency.name}{' '}
 		{props.currency.symbol}
@@ -8,4 +8,4 @@ const CurrencyDisplay = (props) => (
 	</p>
 )
 
-export default CurrencyDisplay
+export default Display

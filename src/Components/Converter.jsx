@@ -1,8 +1,9 @@
 import React from 'react'
-// import CurrencyDisplay from './Display'
+import Display from './Display'
 import App from '../App'
 
-class Converter extends React.Component{
+const withCurrency = (BaseComponent) => (
+class Currency extends React.Component{
     state = {
         currencyChosen: false, 
         selectedCurrency: 'Select Currency', 
@@ -66,17 +67,12 @@ class Converter extends React.Component{
                         
 
                 }
-            )}
-
-           
-
-
-
+            
         </div>
-        )
+    )
     }
-}
+})
 
-// const ExchangedCurrency = withConverter(App)
+const ExchangedCurrency = withCurrency(App)
 
-export default withConverter(App)
+export default ExchangedCurrency
